@@ -26,7 +26,7 @@ namespace WomenEmpowerment
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<WomenEmpowermentContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Connection")));
+            services.AddDbContext<WomenEmpowermentContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ConnectionMac")));
 
             services.AddControllers();
             services.AddCors();
