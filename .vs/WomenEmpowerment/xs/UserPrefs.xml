@@ -1,15 +1,12 @@
 ﻿<Properties StartupConfiguration="{FFBEA96D-9D7C-4973-AD37-E03D0A7352B4}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="WomenEmpowerment/Properties/launchSettings.json">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WomenEmpowerment/Controllers/TraineeApplicationController.cs">
     <Files>
-      <File FileName="WomenEmpowerment/appsettings.json" Line="11" Column="2" />
-      <File FileName="WomenEmpowerment/Startup.cs" Line="38" Column="14" />
-      <File FileName="WomenEmpowerment/Controllers/HomeController.cs" Line="14" Column="1" />
-      <File FileName="WomenEmpowerment/Controllers/LoginController.cs" Line="14" Column="18" />
-      <File FileName="WomenEmpowerment/Properties/launchSettings.json" Line="12" Column="21" />
+      <File FileName="WomenEmpowerment/Controllers/TraineeApplicationController.cs" Line="56" Column="6" />
+      <File FileName="WomenEmpowerment/Controllers/TraineeFamilyDetailsController.cs" Line="42" Column="107" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,7 +14,8 @@
           <Node name="WomenEmpowerment" expanded="True">
             <Node name="WomenEmpowerment" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="Properties" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="ViewModels" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -27,7 +25,7 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.WomenEmpowerment PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>

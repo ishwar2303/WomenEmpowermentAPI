@@ -35,5 +35,23 @@ namespace WomenEmpowerment.Controllers
 
             return Ok(application);
         }
+
+        [HttpGet]
+        [Route("Get/{traineeId}")]
+        public IActionResult GetTraineeApplicationStatus(int traineeId)
+        {
+            TraineeApplication application = new TraineeApplication();
+            try
+            {
+                var data = db.TraineeApplications.ToList();
+                application = (from d in data where d.TraineeId == traineeId select d).FirstOrDefault();
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+
+            return Ok(application);
+        }
     }
 }
