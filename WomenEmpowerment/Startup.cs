@@ -47,7 +47,7 @@ namespace WomenEmpowerment
 
             app.UseCors(options =>
             {
-                options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+                options.WithOrigins("http://localhost:4200/").AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
             });
 
             app.UseSession();
