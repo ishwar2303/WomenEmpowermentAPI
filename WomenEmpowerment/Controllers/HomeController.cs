@@ -30,22 +30,5 @@ namespace WomenEmpowerment.Controllers
             return Ok(data);
         }
 
-        [HttpGet]
-        [Route("Courses")]
-        public IActionResult GetCourses()
-        {
-            HttpContext.Session.SetString("Something", "Great");
-
-            var courses = new List<Course>();
-            try
-            {
-                courses = db.Courses.ToList();
-            }
-            catch(Exception e)
-            {
-                return BadRequest(e.Message);
-            }
-            return Ok(courses);
-        }
     }
 }

@@ -23,12 +23,37 @@ namespace WomenEmpowerment.Controllers
         [Route("Register")]
         public IActionResult PostTrainee(Trainee trainee)
         {
-            db.Trainees.Add(trainee);
-            int changes = db.SaveChanges();
+            string errorMessage = "";
+            
+            try
+            {
+                if(trainee != null)
+                {
+                    trainee.Username = trainee.Username.ToLower();
+                    string username = trainee.Username;
 
-            if (changes == 1)
-                return Ok("Trainee registration successfull");
-            else return BadRequest("Something went wrong while registration");
+                    var data = db.Trainees.ToList();
+                    var traineeExists = (from d in data where d.Username == username select d).FirstOrDefault();
+
+                    if(traineeExists != null)
+                    {
+                        errorMessage = "Username already registered";
+                        return BadRequest(new { error = errorMessage });
+                    }
+                    else
+                    {
+                        // Register New Trainee
+                        db.Trainees.Add(trainee);
+                        db.SaveChanges();
+                    }
+
+                }
+            }
+            catch(Exception e)
+            {
+                return BadRequest(new { error = "Something went wrong while registration", exceptionMessage = e.Message });
+            }
+            return Ok(new { success = "Trainee registration successfull", data = trainee });
 
         }
 
