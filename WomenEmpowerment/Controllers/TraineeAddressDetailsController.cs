@@ -25,10 +25,10 @@ namespace WomenEmpowerment.Controllers
             }
             catch (Exception e)
             {
-                return BadRequest(e.Message);
+                return BadRequest(new { error = "Something went wrong while adding address details", errorMessage = e.Message });
             }
 
-            return Ok(addressDetails);
+            return Ok(new { success = "Trainee Address Details Added Successfully", data = addressDetails });
         }
 
 

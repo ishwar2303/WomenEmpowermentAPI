@@ -25,10 +25,11 @@ namespace WomenEmpowerment.Controllers
             }
             catch (Exception e)
             {
-                return BadRequest(e.Message);
+                Console.WriteLine(e.StackTrace);
+                return BadRequest(new { error = "Something went wrong while adding personal details", errorMessage = e.Message });
             }
 
-            return Ok(familyDetails);
+            return Ok(new { success = "Trainee Family Details Added Successfully", data = familyDetails });
         }
 
         [HttpGet]
