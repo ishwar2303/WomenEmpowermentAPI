@@ -19,7 +19,7 @@ namespace WomenEmpowerment.Controllers
         {
             string EmployeeId = HttpContext.Session.GetString("EmployeeId");
             if (EmployeeId == null)
-                return BadRequest("Login krke aa bc");
+                return BadRequest("Please login");
 
             var data = new {
                 Name = "Ishwar",
@@ -34,6 +34,8 @@ namespace WomenEmpowerment.Controllers
         [Route("Courses")]
         public IActionResult GetCourses()
         {
+            HttpContext.Session.SetString("Something", "Great");
+
             var courses = new List<Course>();
             try
             {
