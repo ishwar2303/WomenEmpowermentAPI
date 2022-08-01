@@ -61,37 +61,21 @@ namespace WomenEmpowerment.Controllers
         [Route("Login")]
         public IActionResult PostLogin(TraineeLogin traineeLogin)
         {
-            // if already logged in
-            var traineeId = HttpContext.Session.GetInt32("TraineeId");
-            if (traineeId != null)
-            {
-                
-                return Ok(new {
-                        FullName = HttpContext.Session.GetString("FullName"),
-                        Username = HttpContext.Session.GetInt32("TraineeId")
-                    }
-                );
-            }
-
             var data = db.Trainees.ToList();
 
             var trainee = (from t in data where t.Username == traineeLogin.Username && t.Password == traineeLogin.Password select t).FirstOrDefault();
 
             if (trainee == null)
-                return Ok(new {
-                   Error = "Username or Password is incorrect"
-                });
-
-            HttpContext.Session.SetInt32("TraineeId", trainee.TraineeId);
-            HttpContext.Session.SetString("FullName", trainee.FullName);
+                return BadRequest(new { error = "Username or Password is incorrect" });
 
             var loggedInTrainee = new
             {
                 FullName = trainee.FullName,
-                Username = trainee.Username
+                Username = trainee.Username,
+                TraineeId = trainee.TraineeId
             };
 
-            return Ok(loggedInTrainee);
+            return Ok(new { success = "Trainee Logged In Successfully", data = loggedInTrainee});
         }
 
     }

@@ -17,17 +17,7 @@ namespace WomenEmpowerment.Controllers
         [HttpGet]
         public IActionResult GetHome()
         {
-            string EmployeeId = HttpContext.Session.GetString("EmployeeId");
-            if (EmployeeId == null)
-                return BadRequest("Please login");
-
-            var data = new {
-                Name = "Ishwar",
-                Email = "ishwar2303@gmail.com",
-                EmployeeId = EmployeeId
-            };
-
-            return Ok(data);
+            return Ok(new { success = "Application Running" });
         }
 
     }
