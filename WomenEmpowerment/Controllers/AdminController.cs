@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WomenEmpowerment.Models;
 
+using Microsoft.EntityFrameworkCore;
+using WomenEmpowerment.ViewModels;
+
 namespace WomenEmpowerment.Controllers
 {
     [Route("api/[controller]")]
@@ -57,5 +60,41 @@ namespace WomenEmpowerment.Controllers
 
         }
 
+        [HttpGet]
+        [Route("Ngo/Requests")]
+        public IActionResult GetNgoRequests()
+        {
+            var data = db.Ngos.Include("NgoApplications").Include("NgoContactDetails").Include("NgoDetails").ToList();
+
+            return Ok(new { success = "Applications Fetched Successfully", data = data });
+        }
+
+        [HttpPut]
+        [Route("Ngo/Update/Status")]
+        public IActionResult PutUpdateStatus(NgoStatus ngoStatus)
+        {
+            NgoApplication ngoApplication = new NgoApplication();
+            try
+            {
+                ngoApplication = db.NgoApplications.Find(ngoStatus.NgoApplicationId);
+                if(ngoApplication != null)
+                {
+                    ngoApplication.Status = ngoStatus.Status;
+                    ngoApplication.ActionDate = DateTime.Now;
+                    db.SaveChanges();
+                }
+                else
+                {
+
+                    return BadRequest(new { error = "Invalid Ngo Application Id" });
+                }
+            }
+            catch(Exception e)
+            {
+
+                return BadRequest(new { error = "Something went wrong while updating application status", errorMessage = e.Message });
+            }
+            return Ok(new { success = "Applications Status Updated Successfully", ngoApplication });
+        }
     }
 }

@@ -27,7 +27,10 @@ namespace WomenEmpowerment
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<WomenEmpowermentContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ConnectionMac")));
-
+            services.AddControllersWithViews()
+                .AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
             services.AddControllers();
             services.AddCors();
             services.AddMvc()

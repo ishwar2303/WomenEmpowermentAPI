@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "uaN8kat24wn94441G5qY5XRi8DA8AdIxDMFqs+KhiFLEAMYKIHDo7dGHG00xaoiKZEXTJq7aLz624VN0uLsBMQ==",
+  "dgSpecHash": "EV8/Jt1Usa9PcwMB+2+0wePCkwFPFXdz23CdSD7Pb5pkqt6Gcozh1L131VGeSMkuE/CMm/0/KrVgVS32zFcA0A==",
   "success": true,
   "projectFilePath": "/Volumes/Study/LTI/Project Galidator/WomenEmpowerment/WomenEmpowerment/WomenEmpowerment.csproj",
   "expectedPackageFiles": [
@@ -17,6 +17,8 @@
     "/Users/ishwarbaisla/.nuget/packages/microsoft.aspnetcore.html.abstractions/2.2.0/microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "/Users/ishwarbaisla/.nuget/packages/microsoft.aspnetcore.http.abstractions/2.2.0/microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "/Users/ishwarbaisla/.nuget/packages/microsoft.aspnetcore.http.features/2.2.0/microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
+    "/Users/ishwarbaisla/.nuget/packages/microsoft.aspnetcore.jsonpatch/3.1.27/microsoft.aspnetcore.jsonpatch.3.1.27.nupkg.sha512",
+    "/Users/ishwarbaisla/.nuget/packages/microsoft.aspnetcore.mvc.newtonsoftjson/3.1.27/microsoft.aspnetcore.mvc.newtonsoftjson.3.1.27.nupkg.sha512",
     "/Users/ishwarbaisla/.nuget/packages/microsoft.aspnetcore.razor/2.2.0/microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "/Users/ishwarbaisla/.nuget/packages/microsoft.aspnetcore.razor.language/3.1.0/microsoft.aspnetcore.razor.language.3.1.0.nupkg.sha512",
     "/Users/ishwarbaisla/.nuget/packages/microsoft.aspnetcore.razor.runtime/2.2.0/microsoft.aspnetcore.razor.runtime.2.2.0.nupkg.sha512",
@@ -68,8 +70,8 @@
     "/Users/ishwarbaisla/.nuget/packages/microsoft.win32.registry/4.7.0/microsoft.win32.registry.4.7.0.nupkg.sha512",
     "/Users/ishwarbaisla/.nuget/packages/microsoft.win32.systemevents/4.7.0/microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "/Users/ishwarbaisla/.nuget/packages/netstandard.library/1.6.1/netstandard.library.1.6.1.nupkg.sha512",
-    "/Users/ishwarbaisla/.nuget/packages/newtonsoft.json/11.0.2/newtonsoft.json.11.0.2.nupkg.sha512",
-    "/Users/ishwarbaisla/.nuget/packages/newtonsoft.json.bson/1.0.1/newtonsoft.json.bson.1.0.1.nupkg.sha512",
+    "/Users/ishwarbaisla/.nuget/packages/newtonsoft.json/12.0.2/newtonsoft.json.12.0.2.nupkg.sha512",
+    "/Users/ishwarbaisla/.nuget/packages/newtonsoft.json.bson/1.0.2/newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "/Users/ishwarbaisla/.nuget/packages/nuget.frameworks/4.7.0/nuget.frameworks.4.7.0.nupkg.sha512",
     "/Users/ishwarbaisla/.nuget/packages/runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "/Users/ishwarbaisla/.nuget/packages/runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
