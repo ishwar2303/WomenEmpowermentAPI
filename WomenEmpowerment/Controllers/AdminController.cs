@@ -69,6 +69,15 @@ namespace WomenEmpowerment.Controllers
             return Ok(new { success = "Applications Fetched Successfully", data = data });
         }
 
+        [HttpGet]
+        [Route("Trainee/Requests")]
+        public IActionResult GetTraineeRequests()
+        {
+            var data = db.Trainees.Include("TraineeApplications").Include("TraineePersonalDetails").Include("TraineeFamilyDetails").Include("TraineeAddressDetails").ToList();
+
+            return Ok(new { success = "Applications Fetched Successfully", data = data });
+        }
+
         [HttpPut]
         [Route("Ngo/Update/Status")]
         public IActionResult PutUpdateStatus(NgoStatus ngoStatus)
@@ -95,6 +104,35 @@ namespace WomenEmpowerment.Controllers
                 return BadRequest(new { error = "Something went wrong while updating application status", errorMessage = e.Message });
             }
             return Ok(new { success = "Applications Status Updated Successfully", ngoApplication });
+        }
+
+
+        [HttpPut]
+        [Route("Trainee/Update/Status")]
+        public IActionResult PutUpdateStatus(TraineeStatus traineeStatus)
+        {
+            TraineeApplication traineeApplication = new TraineeApplication();
+            try
+            {
+                traineeApplication = db.TraineeApplications.Find(traineeStatus.TraineeApplicationId);
+                if (traineeApplication != null)
+                {
+                    traineeApplication.Status = traineeStatus.Status;
+                    traineeApplication.ActionDate = DateTime.Now;
+                    db.SaveChanges();
+                }
+                else
+                {
+
+                    return BadRequest(new { error = "Invalid Trainee Application Id" });
+                }
+            }
+            catch (Exception e)
+            {
+
+                return BadRequest(new { error = "Something went wrong while updating application status", errorMessage = e.Message });
+            }
+            return Ok(new { success = "Applications Status Updated Successfully", traineeApplication });
         }
     }
 }

@@ -1,7 +1,13 @@
 ﻿<Properties StartupConfiguration="{FFBEA96D-9D7C-4973-AD37-E03D0A7352B4}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WomenEmpowerment/Controllers/TraineeApplicationController.cs">
+  <MonoDevelop.Ide.ItemProperties.WomenEmpowerment PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="WomenEmpowerment/Controllers/AdminController.cs">
     <Files>
-      <File FileName="WomenEmpowerment/Controllers/TraineeApplicationController.cs" Line="66" Column="43" />
+      <File FileName="WomenEmpowerment/Controllers/AdminController.cs" Line="75" Column="10" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,6 +19,7 @@
               </Node>
               <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True" />
               <Node name="ViewModels" expanded="True" />
             </Node>
           </Node>
@@ -23,11 +30,5 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.WomenEmpowerment PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>
