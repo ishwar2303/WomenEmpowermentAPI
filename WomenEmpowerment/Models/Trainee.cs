@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using WomenEmpowerment.Validations;
 
 #nullable disable
 
@@ -18,6 +19,8 @@ namespace WomenEmpowerment.Models
         public int TraineeId { get; set; }
         public string FullName { get; set; }
         public string Username { get; set; }
+
+        [MinimumAge(16)]
         public DateTime DateOfBirth { get; set; }
         public long Mobile { get; set; }
         public string Password { get; set; }

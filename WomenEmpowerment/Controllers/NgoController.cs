@@ -30,7 +30,7 @@ namespace WomenEmpowermentAPI.Controllers
                     return BadRequest(new { error = "Something went wrong while registration", exceptionMessage = e.Message });
                 }
             }
-            return Ok(new { success = "Trainee registration successfull", data = ngo });
+            return Ok(new { success = "NGO registration successfull", data = ngo });
         }
 
         //for login into the NGO Portal
@@ -51,7 +51,7 @@ namespace WomenEmpowermentAPI.Controllers
                 NgoId = ngo.NgoId
             };
 
-            return Ok(new { success = "Trainee Logged In Successfully", data = loggedInNgo });
+            return Ok(new { success = "NGO Logged In Successfully", data = loggedInNgo });
 
         }
 

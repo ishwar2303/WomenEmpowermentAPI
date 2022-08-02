@@ -23,37 +23,43 @@ namespace WomenEmpowerment.Controllers
         [Route("Register")]
         public IActionResult PostTrainee(Trainee trainee)
         {
-            string errorMessage = "";
+            if(ModelState.IsValid)
+            {
+
+                string errorMessage = "";
             
-            try
-            {
-                if(trainee != null)
+                try
                 {
-                    trainee.Username = trainee.Username.ToLower();
-                    string username = trainee.Username;
-
-                    var data = db.Trainees.ToList();
-                    var traineeExists = (from d in data where d.Username == username select d).FirstOrDefault();
-
-                    if(traineeExists != null)
+                    if(trainee != null)
                     {
-                        errorMessage = "Username already registered";
-                        return BadRequest(new { error = errorMessage });
-                    }
-                    else
-                    {
-                        // Register New Trainee
-                        db.Trainees.Add(trainee);
-                        db.SaveChanges();
-                    }
+                        trainee.Username = trainee.Username.ToLower();
+                        string username = trainee.Username;
 
+                        var data = db.Trainees.ToList();
+                        var traineeExists = (from d in data where d.Username == username select d).FirstOrDefault();
+
+                        if(traineeExists != null)
+                        {
+                            errorMessage = "Username already registered";
+                            return BadRequest(new { error = errorMessage });
+                        }
+                        else
+                        {
+                            // Register New Trainee
+                            db.Trainees.Add(trainee);
+                            db.SaveChanges();
+                        }
+
+                    }
                 }
+                catch(Exception e)
+                {
+                    return BadRequest(new { error = "Something went wrong while registration", exceptionMessage = e.Message });
+                }
+                return Ok(new { success = "Trainee registration successfull", data = trainee });
+
             }
-            catch(Exception e)
-            {
-                return BadRequest(new { error = "Something went wrong while registration", exceptionMessage = e.Message });
-            }
-            return Ok(new { success = "Trainee registration successfull", data = trainee });
+            else return BadRequest(new { error = "Fill details properly" });
 
         }
 
